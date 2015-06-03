@@ -45,6 +45,7 @@ class MountainViewTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_match(/Header/, response.body)
     assert_match(/20 Mountains you didn.+t know they even existed/, response.body)
+    assert_match(/Headers can also contain subtitles/, response.body)
   end
 
   test "shows a hint message if the component stub file is empty" do

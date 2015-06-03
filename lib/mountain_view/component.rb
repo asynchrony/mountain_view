@@ -1,4 +1,6 @@
 module MountainView
+  require 'redcarpet'
+
   class Component
     attr_reader :name
 
@@ -14,8 +16,19 @@ module MountainView
       YAML.load_file stubs_file
     end
 
+    def styleguide_description
+      if File.exists? description_file
+        markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
+        markdown.render(IO.read(description_file))
+      end
+    end
+
     def stubs_file
       Rails.root.join("app/components/#{name}/#{name}.yml")
+    end
+
+    def description_file
+      Rails.root.join("app/components/#{name}/#{name}.md")
     end
 
     def stubs?
