@@ -1,0 +1,16 @@
+/**
+  * @name Gradient($Start, $End)
+  * @description Style for the @mixin gradient($start, $end) element
+  * @section Mixins
+  *
+  * @variable $start - Starting gradient color as hex
+  * @variable $end - Ending gradient color as hex
+  *
+  * @markup
+  *   @mixin gradient($start, $end)
+  *
+  */
+
+@mixin gradient($start, $end){
+
+}

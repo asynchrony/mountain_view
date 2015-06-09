@@ -1,0 +1,55 @@
+//
+// @name Text Input
+// @description Style for the full-width class
+// @section Forms
+//
+// @state :disabled - Dims the button when disabled.
+// @state .primary - Indicates button is the primary action.
+// @state .smaller - A smaller button
+//
+// @markup
+//   <button class="$modifier">markup</button>
+//
+
+input[type="text"] {
+  max-width: 150px;
+
+  .full-width {
+    width:100%;
+  }
+}
+
+
+//
+// @name Submit Button
+// @description Style for the full-width class
+// @section Forms
+//
+// @state :disabled - Dims the button when disabled.
+// @state .full_width - Indicates button is the primary action.
+// @state .smaller - A smaller button
+//
+// @markup
+//   <input type="submit" name="Markup" class="$modifier">
+//
+
+input[type="submit"] {
+  max-width: 150px;
+  background-color:green;
+  font-size:2em;
+  padding: 10px;
+  border:0;
+  border-radius:10px;
+  color:#FFF;
+
+  &:disabled {
+    background-color:grey;
+  }
+
+  &.full_width {
+    width:100%;
+  }
+  &.smaller {
+    font-size:1em;
+  }
+}

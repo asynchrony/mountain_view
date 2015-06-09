@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=clike+javascript+ruby */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+ruby */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -134,4 +134,3 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
-

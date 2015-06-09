@@ -3,6 +3,7 @@
 <head>
   <title>Styleguide</title>
   <%= stylesheet_link_tag 'mountain_view/styleguide', media: 'all', 'data-turbolinks-track' => true %>
+   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'mountain_view/styleguide', 'data-turbolinks-track' => true %>
 
   <%= csrf_meta_tags %>
@@ -13,6 +14,11 @@
   </div>
   <div class="mv-flex-wrapper">
     <div class="mv-sidebar">
+      <h3>STYLES</h3>
+      <ul>
+        <% mv_style_sections.each do |section| %>
+          <li><%= link_to section, style_path(id: section) %></li>
+        <% end %>
       <h3>COMPONENTS</h3>
       <ul>
         <%- mv_components.each do |component| %>

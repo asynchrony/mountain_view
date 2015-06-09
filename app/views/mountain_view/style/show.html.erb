@@ -1,0 +1,35 @@
+<div class="mv-main__header">
+  <h1><%= params[:id] %></h1>
+</div>
+
+<% @styles.each do |style| %>
+  <section class="mv-main__style">
+    <h2><%= style.name %></h2>
+    <p><%= style.description %></p>
+    <% if style.variables.size > 0 || style.states.size > 0 %>
+    <ul>
+      <% style.states.each do |state| %>
+        <li><strong><%= state.name %></strong> - <%= state.description %></li>
+      <% end %>
+      <% style.variables.each do |variable| %>
+        <li><strong><%= variable.name %></strong> - <%= variable.description %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+    <% if style.markup.size > 0 %>
+      <div class="mv-main__style__definition">
+        <code class="language-markup"><%= style.markup %></code>
+      </div>
+    <% end %>
+
+    <% if style.section.downcase != 'mixins' %>
+      <h3>Examples</h3>
+      <% style.states.each do |state| %>
+        <div class="mv-main__style__example" data-state="<%= state.name %>">
+          <%= styled_markup(state.name, style.markup).html_safe %>
+        </div>
+      <% end %>
+    <% end %>
+  </section>
+<% end %>
